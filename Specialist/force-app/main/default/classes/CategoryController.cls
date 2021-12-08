@@ -1,4 +1,4 @@
-public with sharing class SpecializationController {
+public with sharing class CategoryController {
 
     @AuraEnabled(cacheable=true)
     public static List<Category__c> getCategories() {

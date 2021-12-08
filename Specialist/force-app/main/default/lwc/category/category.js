@@ -1,7 +1,7 @@
 import { LightningElement, wire } from 'lwc';
-import getCategories from '@salesforce/apex/SpecializationController.getCategories';
+import getCategories from '@salesforce/apex/CategoryController.getCategories';
 
-export default class Specialization extends LightningElement {
+export default class Category extends LightningElement {
     categories;
 
     connectedCallback() {
