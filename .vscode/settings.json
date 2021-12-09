@@ -1,0 +1,5 @@
+{
+    "eslint.format.enable": true,
+    "salesforcedx-vscode-apex.java.home": "C:/Program Files/Java/jdk-11.0.12",
+    "eslint.enable": false
+}
