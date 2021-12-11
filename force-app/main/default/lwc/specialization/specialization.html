@@ -1,0 +1,12 @@
+<template>
+    <div>
+        <template if:true={specializatios}>
+            <template for:each={specializatios} for:item="specialization">
+                <lightning-layout padding="around-small" key={specialization.Id}>
+                    <div class="specName custom-box slds-box slds-var-p-around_medium slds-text-align_center">
+                        {specialization.Name}</div>
+                </lightning-layout>
+            </template>
+        </template>
+    </div>
+</template>
