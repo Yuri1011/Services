@@ -4,3 +4,10 @@
 .title {
     color: antiquewhite;
 }
+.specName {
+    background-color: antiquewhite;
+}
+.cont{
+    display: inline-block;
+    margin: var(--lwc-borderWidthThick, 2px);
+}

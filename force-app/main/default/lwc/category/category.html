@@ -2,7 +2,13 @@
     <template if:true={categories}>
         <template for:each={categories} for:item="category">
             <p class="title" key={category.Id}>{category.Name}</p>
+            <template for:each={category.Specializations__r} for:item="spec">
+                <div key={spec.Id} class="cont">
+                    <div class="specName slds-box slds-var-p-around_medium slds-text-align_center">
+                        {spec.Name}
+                    </div>
+                </div>
+            </template>
         </template>
     </template>
-    <c-specialization></c-specialization>
 </template>
