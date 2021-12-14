@@ -2,16 +2,13 @@
     background-color: #f4f6f9;
 }
 .title {
-    color: antiquewhite;
+    color: black;
 }
 .specName {
-    background-color: antiquewhite;
+    background-color: white;
 }
 .cont{
     display: inline-block;
     margin: var(--lwc-borderWidthThick, 2px);
     cursor: pointer;
-}
-.hide{
-    display: none;
 }
