@@ -1,13 +1,12 @@
 import { LightningElement, wire } from 'lwc';
 import getCategories from '@salesforce/apex/CategoryController.getCategories';
-// import getSpecializatios from '@salesforce/apex/SpecializationController.getSpecializatios';
 
 export default class Category extends LightningElement {
     categories;
-    // specializatios;
+    showSpecialistComp = true;
 
     showSpecialist(event) {
-        this.template.querySelector('.containerCategory').style = 'display:none';
+        this.showSpecialistComp = false;
     }
 
     connectedCallback() {
@@ -18,13 +17,5 @@ export default class Category extends LightningElement {
             .catch((error) => {
                 console.log(error);
             });
-
-            // getSpecializatios()
-            // .then((result) => {
-            //     this.specializatios = result;
-            // })
-            // .catch((error) => {
-            //     console.log(error);
-            // });
     }
 }

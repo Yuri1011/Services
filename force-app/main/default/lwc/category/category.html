@@ -1,5 +1,5 @@
 <template>
-    <div class="containerCategory">
+    <template if:true={showSpecialistComp}>
         <template if:true={categories}>
             <template for:each={categories} for:item="category">
                 <p class="title" key={category.Id}>{category.Name}</p>
@@ -12,5 +12,5 @@
                 </template>
             </template>
         </template>
-    </div>
+    </template>
 </template>
