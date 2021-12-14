@@ -10,4 +10,8 @@
 .cont{
     display: inline-block;
     margin: var(--lwc-borderWidthThick, 2px);
+    cursor: pointer;
+}
+.hide{
+    display: none;
 }

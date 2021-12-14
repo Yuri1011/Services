@@ -1,14 +1,16 @@
 <template>
-    <template if:true={categories}>
-        <template for:each={categories} for:item="category">
-            <p class="title" key={category.Id}>{category.Name}</p>
-            <template for:each={category.Specializations__r} for:item="spec">
-                <div key={spec.Id} class="cont">
-                    <div class="specName slds-box slds-var-p-around_medium slds-text-align_center">
-                        {spec.Name}
+    <div class="containerCategory">
+        <template if:true={categories}>
+            <template for:each={categories} for:item="category">
+                <p class="title" key={category.Id}>{category.Name}</p>
+                <template for:each={category.Specializations__r} for:item="spec">
+                    <div key={spec.Id} class="cont" onclick={showSpecialist}>
+                        <div class="specName slds-box slds-var-p-around_medium slds-text-align_center">
+                            {spec.Name}
+                        </div>
                     </div>
-                </div>
+                </template>
             </template>
         </template>
-    </template>
+    </div>
 </template>
