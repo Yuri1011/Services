@@ -13,5 +13,7 @@
             </template>
         </template>
     </template>
-    <c-specialist categories={categories}></c-specialist>
+    <template if:false={showSpecialistComp}>
+        <c-specialist categories={categories}></c-specialist>
+    </template>
 </template>
