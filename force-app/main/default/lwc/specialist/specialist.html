@@ -1,19 +1,12 @@
 <template>
-    <template if:true={categories}>
-        <template for:each={categories} for:item="category">
-            <template for:each={category.Specializations__r} for:item="spec">
-                <div key={spec.Id}>
-                    <h1>{spec.Name}</h1>
-                    <div
-                        class="slds-box slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
-                        <lightning-layout multiple-rows>
-                            <lightning-layout-item size="4" padding="around-small">
-                                <div class="custom-box slds-box slds-p-around_medium slds-text-align_center">1</div>
-                            </lightning-layout-item>
-                        </lightning-layout>
-                    </div>
-                </div>
-            </template>
-        </template>
-    </template>
+    <div>
+        <h1>{specializationName}</h1>
+        <div class="slds-box slds-p-around_none slds-var-m-top_x-small slds-var-m-bottom_medium slds-m-horizontal_none">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item size="4" padding="around-small">
+                    <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center">Specialist</div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </div>
 </template>

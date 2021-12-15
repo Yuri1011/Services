@@ -4,8 +4,9 @@
             <template for:each={categories} for:item="category">
                 <p class="title" key={category.Id}>{category.Name}</p>
                 <template for:each={category.Specializations__r} for:item="spec">
-                    <div key={spec.Id} class="cont" onclick={showSpecialist}>
-                        <div class="specName slds-box slds-var-p-around_medium slds-text-align_center">
+                    <div key={spec.Id} class="cont">
+                        <div class="specName slds-box slds-var-p-around_medium slds-text-align_center"
+                            onclick={showSpecialist}>
                             {spec.Name}
                         </div>
                     </div>
@@ -14,6 +15,6 @@
         </template>
     </template>
     <template if:false={showSpecialistComp}>
-        <c-specialist categories={categories}></c-specialist>
+        <c-specialist specialization-name={specializationName}></c-specialist>
     </template>
 </template>
