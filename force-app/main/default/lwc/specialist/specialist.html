@@ -1,12 +1,14 @@
 <template>
-    <div>
-        <h1>{specializationName}</h1>
-        <div class="slds-box slds-p-around_none slds-var-m-top_x-small slds-var-m-bottom_medium slds-m-horizontal_none">
-            <lightning-layout multiple-rows>
-                <lightning-layout-item size="4" padding="around-small">
-                    <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center">Specialist</div>
-                </lightning-layout-item>
-            </lightning-layout>
-        </div>
-    </div>
+    <h1>{specializationName}</h1>
+    <template if:true={specialistsForSpecialization}>
+        <template for:each={specialistsForSpecialization} for:item='specialist'>
+            <div key={specialist.Id} class="containerSpecialists">
+                <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center">
+                    <p>Last Name: {specialist.lastName}</p>
+                    <p>First Name: {specialist.firstName}</p>
+                    <lightning-button variant="success" label="Profile" onclick={handleClick} class=""></lightning-button>
+                </div>
+            </div>
+        </template>
+    </template>
 </template>
