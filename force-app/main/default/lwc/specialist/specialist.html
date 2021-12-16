@@ -6,7 +6,10 @@
                 <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center">
                     <p>Last Name: {specialist.lastName}</p>
                     <p>First Name: {specialist.firstName}</p>
-                    <lightning-button variant="success" label="Profile" onclick={handleClick} class=""></lightning-button>
+                    <div class="slds-m-around_medium">
+                        <lightning-button variant="success" label="Profile" onclick={handleClick} class="">
+                        </lightning-button>
+                    </div>
                 </div>
             </div>
         </template>
