@@ -3,10 +3,10 @@ import getSpecialists from '@salesforce/apex/SpecialistController.getSpecialists
 
 export default class Specialist extends LightningElement {
     @api categories;
-    @api specializationName;
+    @api specializationTitle;
     specialistsForSpecialization;
     specialists;
-    
+    @api showPopupEvent;
 
     connectedCallback() {
         getSpecialists()
@@ -24,7 +24,7 @@ export default class Specialist extends LightningElement {
     staffSpecialists() {
         let array = new Array();
         this.specialists.forEach(el => {
-            if (el.Specialization__r.Name === this.specializationName) {
+            if (el.Specialization__r.Name === this.specializationTitle) {
                 array.push({
                   'id':el.Id,
                   'lastName':el.Last_Name__c,
@@ -33,5 +33,15 @@ export default class Specialist extends LightningElement {
             }
         });
         this.specialistsForSpecialization = array;
+    }
+
+    showPopup() {
+        this.showPopupEvent = true;
+
+        const selectedEvent = new CustomEvent("handleshowpopup", {
+            detail: this.showPopupEvent
+          });
+
+        this.dispatchEvent(selectedEvent);
     }
 }

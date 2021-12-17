@@ -1,13 +1,15 @@
-import { LightningElement, api} from 'lwc';
+import { LightningElement, api,track} from 'lwc';
 import getCategories from '@salesforce/apex/CategoryController.getCategories';
 
 export default class Category extends LightningElement {
     @api categories;
     showSpecialistComp = true;
-    @api specializationName;
+    @api specializationTitle;
+    @track showPopupEvent;
+
 
     showSpecialist(event) {
-        this.specializationName = event.target.innerText;
+        this.specializationTitle = event.target.innerText;
         this.showSpecialistComp = false;
     }
 
@@ -15,9 +17,23 @@ export default class Category extends LightningElement {
         getCategories()
             .then((result) => {
                 this.categories = result;
+                
             })
             .catch((error) => {
                 console.log(error);
             });
+    }
+
+
+    handleShowPopup(event) {
+        this.showPopupEvent = event.detail;
+        this.handleShow();
+    }
+
+    handleShow() {
+        const selectedEvent = new CustomEvent("handleshow", {
+            detail: this.showPopupEvent
+          });
+        this.dispatchEvent(selectedEvent);
     }
 }

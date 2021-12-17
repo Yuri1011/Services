@@ -1,3 +1,9 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 
-export default class App extends LightningElement {}
+export default class App extends LightningElement {
+    @api show;
+
+    handleShow(event) {
+        this.show = event.detail;
+    }
+}
