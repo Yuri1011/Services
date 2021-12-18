@@ -6,7 +6,7 @@ export default class Specialist extends LightningElement {
     @api specializationTitle;
     specialistsForSpecialization;
     specialists;
-    @api showPopupEvent;
+    @api togglePopupWindowProfile;
 
     connectedCallback() {
         getSpecialists()
@@ -35,11 +35,11 @@ export default class Specialist extends LightningElement {
         this.specialistsForSpecialization = array;
     }
 
-    showPopup() {
-        this.showPopupEvent = true;
+    showPopupWindowProfile() {
+        this.togglePopupWindowProfile = true;
 
-        const selectedEvent = new CustomEvent("handleshowpopup", {
-            detail: this.showPopupEvent
+        const selectedEvent = new CustomEvent("geteventdetailpopupwindowprofile", {
+            detail: this.togglePopupWindowProfile
           });
 
         this.dispatchEvent(selectedEvent);

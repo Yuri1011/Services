@@ -1,9 +1,9 @@
 import { LightningElement, api, track } from 'lwc';
 
 export default class App extends LightningElement {
-    @track show;
+    @track popupWindowProfile;
 
-    handleShow(event) {
-        this.show = event.detail;
+    togglePopupWindowProfile(event) {
+        this.popupWindowProfile = event.detail;
     }
 }

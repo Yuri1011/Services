@@ -5,7 +5,7 @@ export default class Category extends LightningElement {
     @api categories;
     showSpecialistComp = true;
     @api specializationTitle;
-    @track showPopupEvent;
+    @track togglePopupWindowProfile;
 
 
     showSpecialist(event) {
@@ -25,14 +25,14 @@ export default class Category extends LightningElement {
     }
 
 
-    handleShowPopup(event) {
-        this.showPopupEvent = event.detail;
+    getEventDetailPopupWindowProfile(event) {
+        this.togglePopupWindowProfile = event.detail;
         this.handleShow();
     }
 
     handleShow() {
-        const selectedEvent = new CustomEvent("handleshow", {
-            detail: this.showPopupEvent
+        const selectedEvent = new CustomEvent("togglepopupwindowprofile", {
+            detail: this.togglePopupWindowProfile
           });
         this.dispatchEvent(selectedEvent);
     }
