@@ -4,9 +4,10 @@ import getSpecialists from '@salesforce/apex/SpecialistController.getSpecialists
 export default class Specialist extends LightningElement {
     @api categories;
     @api specializationTitle;
-    specialistsForSpecialization;
+    @api specialistsForSpecialization;
     specialists;
     @api togglePopupWindowProfile;
+    @api specialistsName;
 
     connectedCallback() {
         getSpecialists()
@@ -33,6 +34,7 @@ export default class Specialist extends LightningElement {
             }
         });
         this.specialistsForSpecialization = array;
+        this.createCustomEventForSpecialistsName();
     }
 
     showPopupWindowProfile() {
@@ -40,6 +42,16 @@ export default class Specialist extends LightningElement {
 
         const selectedEvent = new CustomEvent("geteventdetailpopupwindowprofile", {
             detail: this.togglePopupWindowProfile
+          });
+
+        this.dispatchEvent(selectedEvent);
+    }
+
+    createCustomEventForSpecialistsName() {
+        this.specialistsName = this.specialistsForSpecialization;
+
+        const selectedEvent = new CustomEvent("geteventspecialistsname", {
+            detail: this.specialistsName
           });
 
         this.dispatchEvent(selectedEvent);
