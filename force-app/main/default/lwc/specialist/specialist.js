@@ -1,4 +1,4 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 import getSpecialists from '@salesforce/apex/SpecialistController.getSpecialists';
 
 export default class Specialist extends LightningElement {
@@ -12,7 +12,7 @@ export default class Specialist extends LightningElement {
         getSpecialists()
         .then((result) => {
             this.specialists = result;
-            this.staffSpecialists();
+            this.selectingSpecialistsByName();
         })
         .catch((error) => {
             console.log(error);
@@ -21,7 +21,7 @@ export default class Specialist extends LightningElement {
         
     }
 
-    staffSpecialists() {
+    selectingSpecialistsByName() {
         let array = new Array();
         this.specialists.forEach(el => {
             if (el.Specialization__r.Name === this.specializationTitle) {

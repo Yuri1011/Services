@@ -1,4 +1,6 @@
 <template>
     <c-category ontogglepopupwindowprofile={togglePopupWindowProfile}></c-category>
-    <c-modal-Popup popup-window-profile={popupWindowProfile}></c-modal-Popup>
+    <template if:true={popupWindowProfile}>
+        <c-modal-Popup ongeteventhidenpopupwindowprofile={getEventHidenPopupWindowProfile}></c-modal-Popup>
+    </template>
 </template>
