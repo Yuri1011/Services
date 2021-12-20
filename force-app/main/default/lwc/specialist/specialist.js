@@ -34,24 +34,15 @@ export default class Specialist extends LightningElement {
             }
         });
         this.specialistsForSpecialization = array;
-        this.createCustomEventForSpecialistsName();
     }
 
     showPopupWindowProfile() {
         this.togglePopupWindowProfile = true;
 
         const selectedEvent = new CustomEvent("geteventdetailpopupwindowprofile", {
-            detail: this.togglePopupWindowProfile
-          });
-
-        this.dispatchEvent(selectedEvent);
-    }
-
-    createCustomEventForSpecialistsName() {
-        this.specialistsName = this.specialistsForSpecialization;
-
-        const selectedEvent = new CustomEvent("geteventspecialistsname", {
-            detail: this.specialistsName
+            detail: this.togglePopupWindowProfile,
+            bubbles: true,
+            composed: true
           });
 
         this.dispatchEvent(selectedEvent);
