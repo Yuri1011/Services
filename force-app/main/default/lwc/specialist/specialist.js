@@ -5,9 +5,11 @@ export default class Specialist extends LightningElement {
     @api categories;
     @api specializationTitle;
     @api specialistsForSpecialization;
-    specialists;
     @api togglePopupWindowProfile;
     @api specialistsName;
+    specialists;
+    lastName;
+    firstName;
 
     connectedCallback() {
         getSpecialists()
@@ -18,8 +20,6 @@ export default class Specialist extends LightningElement {
         .catch((error) => {
             console.log(error);
         });
-
-        
     }
 
     selectingSpecialistsByName() {
@@ -36,7 +36,7 @@ export default class Specialist extends LightningElement {
         this.specialistsForSpecialization = array;
     }
 
-    showPopupWindowProfile() {
+    showPopupWindowProfile(event) {
         this.togglePopupWindowProfile = true;
 
         const selectedEvent = new CustomEvent("geteventdetailpopupwindowprofile", {
@@ -46,5 +46,13 @@ export default class Specialist extends LightningElement {
           });
 
         this.dispatchEvent(selectedEvent);
+        this.getNamesSpec(event);
+    }
+
+    getNamesSpec(event) {
+        const last = JSON.stringify(event.target.parentElement.parentElement.innerText).split(' ');
+        const first = JSON.stringify(event.target.parentElement.parentElement.innerText).split(' ');
+        this.lastName = last.splice(2,1).join().replace(/First/g, '');
+        this.firstName = first.splice(4,1).join().replace(/"/g, '');
     }
 }

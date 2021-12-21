@@ -3,9 +3,17 @@
     <template if:true={specialistsForSpecialization}>
         <template for:each={specialistsForSpecialization} for:item='specialist'>
             <div key={specialist.Id} class="containerSpecialists">
-                <div class="custom-box slds-box slds-var-p-around_medium slds-text-align_center">
-                    <p>Last Name: {specialist.lastName}</p>
-                    <p>First Name: {specialist.firstName}</p>
+                <div class="
+                    blockName
+                    custom-box 
+                    slds-box 
+                    slds-var-p-around_medium 
+                    slds-text-align_center">
+                    <p class="blockWithLastNameSpecialist" title={specialist.lastName}>Last Name:
+                        {specialist.lastName}
+                    </p>
+                    <p class="blockWithFirstNameSpecialist" title={specialist.firstName}>First Name:
+                        {specialist.firstName}</p>
                     <div class="slds-var-m-around_medium">
                         <lightning-button variant="success" label="Profile" onclick={showPopupWindowProfile} class="">
                         </lightning-button>

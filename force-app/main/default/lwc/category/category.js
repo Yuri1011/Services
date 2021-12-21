@@ -23,13 +23,7 @@ export default class Category extends LightningElement {
                 console.log(error);
             });
     }
-
-
-    // getEventDetailPopupWindowProfile(event) {
-    //     this.togglePopupWindowProfile = event.detail;
-    //     this.createCustomEventForPopupWindow();
-    // }
-
+    
     createCustomEventForPopupWindow() {
         const selectedEvent = new CustomEvent("togglepopupwindowprofile", {
             detail: this.togglePopupWindowProfile
