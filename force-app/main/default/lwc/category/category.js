@@ -7,7 +7,6 @@ export default class Category extends LightningElement {
     @api specializationTitle;
     @track togglePopupWindowProfile;
 
-
     showSpecialist(event) {
         this.specializationTitle = event.target.innerText;
         this.showSpecialistComp = false;
