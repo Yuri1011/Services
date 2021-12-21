@@ -50,8 +50,9 @@ export default class Specialist extends LightningElement {
     }
 
     getNamesSpec(event) {
-        const last = JSON.stringify(event.target.parentElement.parentElement.innerText).split(' ');
-        const first = JSON.stringify(event.target.parentElement.parentElement.innerText).split(' ');
+        const textNameInParentElement = JSON.stringify(event.target.parentElement.parentElement.innerText).split(' ');
+        const last = textNameInParentElement;
+        const first = textNameInParentElement;
         this.lastName = last.splice(2,1).join().replace(/First/g, '');
         this.firstName = first.splice(4,1).join().replace(/"/g, '');
     }
