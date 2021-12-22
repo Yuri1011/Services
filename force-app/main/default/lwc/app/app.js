@@ -3,6 +3,7 @@ import { LightningElement, api, track } from 'lwc';
 export default class App extends LightningElement {
     @track popupWindowProfile;
     @track hidenPopupWindowProfile;
+    @track specialistId;
 
     getEventHidenPopupWindowProfile(event) {
         this.hidenPopupWindowProfile = event.detail;
@@ -10,6 +11,7 @@ export default class App extends LightningElement {
     }
 
     getEventDetailPopupWindowProfile(event) {
-        this.popupWindowProfile = event.detail;
+        this.popupWindowProfile = event.detail.toggle;
+        this.specialistId = event.detail.id
     }
 }

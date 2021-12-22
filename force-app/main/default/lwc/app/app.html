@@ -1,7 +1,8 @@
 <template>
-    <c-category ongeteventdetailpopupwindowprofile={getEventDetailPopupWindowProfile}></c-category>
+    <c-category ongeteventdetailpopupwindowprofile={getEventDetailPopupWindowProfile}>
+    </c-category>
     <template if:true={popupWindowProfile}>
-        <c-modal-Popup ongeteventhidenpopupwindowprofile={getEventHidenPopupWindowProfile}>
+        <c-modal-Popup ongeteventhidenpopupwindowprofile={getEventHidenPopupWindowProfile} specialist-id={specialistId}>
         </c-modal-Popup>
     </template>
 </template>

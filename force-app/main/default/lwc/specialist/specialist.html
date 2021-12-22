@@ -2,7 +2,7 @@
     <h1>{specializationTitle}</h1>
     <template if:true={specialistsForSpecialization}>
         <template for:each={specialistsForSpecialization} for:item='specialist'>
-            <div key={specialist.Id} class="containerSpecialists">
+            <div key={specialist.id} class="containerSpecialists">
                 <div class="
                     custom-box 
                     slds-box 
@@ -14,7 +14,8 @@
                     <p class="blockWithFirstNameSpecialist" title={specialist.firstName}>First Name:
                         {specialist.firstName}</p>
                     <div class="slds-var-m-around_medium">
-                        <lightning-button variant="success" label="Profile" onclick={showPopupWindowProfile} class="">
+                        <lightning-button id={specialist.id} variant="success" label="Profile"
+                            onclick={showPopupWindowProfile}>
                         </lightning-button>
                     </div>
                 </div>
