@@ -42,7 +42,7 @@ export default class Specialist extends LightningElement {
 
         let detailsForParentCompApp = {
             toggle: togglePopupWindowProfile,
-            id: specialistId
+            id: specialistId.slice(0,18)
         }
 
         const selectedEvent = new CustomEvent("geteventdetailpopupwindowprofile", {

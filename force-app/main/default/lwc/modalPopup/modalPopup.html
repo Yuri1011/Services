@@ -6,14 +6,18 @@
             <header class="slds-modal__header">
                 <h2 class="slds-modal__title slds-hyphenate">Specialist profile</h2>
             </header>
-            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                <div class="specialistPhoto">specialistPhoto</div>
-                <p class="specialistNameModal">Last Name : </p>
-                <p class="specialistNameModal">First Name : </p>
-                <p class="specialistNameModal">Phone :</p>
-                <p class="specialistNameModal">Email :</p>
-                <p class="specialistNameModal">Network :</p>
-            </div>
+            <template if:true={namesSpecialist}>
+                <template for:each={namesSpecialist.data} for:item='specialist'>
+                    <div key={specialist.Id} class="slds-modal__content slds-p-around_medium">
+                        <div class="specialistPhoto">specialistPhoto</div>
+                        <p class="specialistNameModal">Last Name : {specialist.Last_Name__c}</p>
+                        <p class="specialistNameModal">First Name : {specialist.First_Name__c} </p>
+                        <p class="specialistNameModal">Phone :</p>
+                        <p class="specialistNameModal">Email :</p>
+                        <p class="specialistNameModal">Network :</p>
+                    </div>
+                </template>
+            </template>
             <footer class="slds-modal__footer">
                 <button class="slds-button slds-button_neutral" onclick={hidePopupWindowProfile}>Cancel</button>
             </footer>
